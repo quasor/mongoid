@@ -1,0 +1,9 @@
+defaults: &defaults
+  allow_read_secondary: true
+  replica_set:
+    - uri : http://localhost/
+    - uri : http://localhost:27018/
+test:
+  <<: *defaults
+  database: mongoid_config_test
+
