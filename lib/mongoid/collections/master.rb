@@ -30,22 +30,6 @@ module Mongoid #:nodoc:
       end
       
       # Ensure retry upon failure
-      # def rescue_connection_failure(max_retries=60)
-      #   success = false
-      #   retries = 0
-      #   while !success
-      #     begin
-      #       puts 'Safely...'
-      #       yield
-      #       success = true
-      #     rescue Mongo::ConnectionFailure => ex
-      #       retries += 1
-      #       puts "Retrying..."
-      #       raise ex if retries >= max_retries
-      #       sleep(0.5)
-      #     end
-      #   end
-      # end
       def rescue_connection_failure(max_retries=10)
         retries = 0
         begin
